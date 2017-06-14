@@ -9,6 +9,7 @@ struct node
 
 LinkedList::LinkedList()
 {
+
 	head = nullptr;
 	tail = nullptr;
 }
@@ -32,7 +33,7 @@ void LinkedList::createNode(int value)
 	else
 	{
 		tail->next = temp;
-		tail - temp;
+		tail = temp;
 	}
 }
 
@@ -84,13 +85,13 @@ void LinkedList::deleteLast()
 	node *current = new node;
 	node *previous = new node;
 	current = head;
-	while (current->next != NULL)
+	while (current->next != nullptr)
 	{
 		previous = current;
 		current = current->next;
 	}
 	tail = previous;
-	previous->next = NULL;
+	previous->next = nullptr;
 	delete current;
 }
 

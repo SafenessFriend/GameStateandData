@@ -1,5 +1,6 @@
 #pragma once
 
+struct node;
 
 class LinkedList
 
@@ -17,6 +18,7 @@ public:
 	void deleteLast();							// delete last node
 	void deletePosition(int pos);				// delete a certaion position
 private:
+
 	node *head, *tail;
 };
 
