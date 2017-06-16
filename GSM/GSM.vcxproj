@@ -90,6 +90,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DynamicArray.cpp" />
     <ClCompile Include="GameStateManager.cpp" />
     <ClCompile Include="GSMApp.cpp" />
     <ClCompile Include="IGameState.cpp" />
@@ -101,6 +102,7 @@
     <ClCompile Include="SplashState.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DynamicArray.h" />
     <ClInclude Include="GameStateManager.h" />
     <ClInclude Include="GSMApp.h" />
     <ClInclude Include="IGameState.h" />
