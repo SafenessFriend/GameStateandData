@@ -5,13 +5,18 @@ public:
 	DynamicArray();
 	~DynamicArray();
 
-	void CreateArray(int initialSize);
+	void Add(int el);
+	const int GetAt(int index);
+	void PopBack();
+	const int GetElements();
 
 private:
-	int cap;
+	int capacity;
 	int elements;
 	int *array;
 
+	void Expand();
+	void Initialise(int from);
 
 };
 
