@@ -21,6 +21,8 @@ bool GSMApp::startup() {
 	m_2dRenderer = new aie::Renderer2D();
 	m_font = new aie::Font("./font/consolas.ttf", 32);
 
+	m_skelly = new aie::Texture("./textures/skelly.png");
+
 	m_gameStateManager = new GameStateManager();
 	m_gameStateManager->SetState("SPLASH", new SplashState(this));
 	m_gameStateManager->SetState("MENU", new MenuState(this));
@@ -28,7 +30,6 @@ bool GSMApp::startup() {
 	m_gameStateManager->SetState("PLAY", new PlayState(this));
 
 	m_gameStateManager->PushState("SPLASH");
-
 
 
 	return true;
@@ -39,6 +40,7 @@ void GSMApp::shutdown() {
 	delete m_gameStateManager;
 	delete m_font;
 	delete m_2dRenderer;
+	delete m_skelly;
 
 }
 
