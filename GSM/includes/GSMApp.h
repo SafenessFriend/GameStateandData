@@ -24,6 +24,7 @@ public:
 protected:
 
 	GameStateManager *m_gameStateManager = nullptr;
+	bool isPaused;
 
 	aie::Renderer2D*	m_2dRenderer;
 	aie::Font*			m_font;

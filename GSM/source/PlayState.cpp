@@ -20,10 +20,11 @@ void PlayState::Update(float deltaTime)
 	// do update logic here
 	std::cout << "Play - Update" << std::endl;
 
-	if (input->wasKeyPressed(aie::INPUT_KEY_P))
-	{
-		m_app->GetGameStateManager()->PushState("PAUSE");
-	}
+	//if (input->wasKeyPressed(aie::INPUT_KEY_P))
+	//{
+	//	m_app->GetGameStateManager()->PopState();
+	//	m_app->GetGameStateManager()->PushState("PAUSE");
+	//}
 
 }
 

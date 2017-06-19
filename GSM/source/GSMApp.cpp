@@ -51,6 +51,22 @@ void GSMApp::update(float deltaTime) {
 	if (input->isKeyDown(aie::INPUT_KEY_ESCAPE))
 		quit();
 
+	if (input->wasKeyPressed(aie::INPUT_KEY_P))
+	{
+		if (isPaused == false)
+		{
+			m_gameStateManager->PopState();
+			m_gameStateManager->PushState("PAUSE");
+			isPaused = true;
+		}
+		else
+		{
+			m_gameStateManager->PopState();
+			m_gameStateManager->PushState("PLAY");
+			isPaused = false;
+		}
+	}
+
 
 	m_gameStateManager->UpdateGameStates(deltaTime);
 }
