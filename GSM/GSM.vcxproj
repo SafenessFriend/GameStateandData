@@ -107,6 +107,7 @@
     <ClCompile Include="source\UnitTest.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DynArr.h" />
     <ClInclude Include="includes\Entity.h" />
     <ClInclude Include="includes\GameStateManager.h" />
     <ClInclude Include="includes\Geometry.h" />

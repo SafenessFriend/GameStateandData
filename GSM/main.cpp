@@ -8,7 +8,7 @@
 
 #include "GSMApp.h"
 #include "UnitTest.h"
-#include "CollisionTest.h"
+
 
 int main() {
 	
@@ -19,11 +19,4 @@ int main() {
 	return 0;
 }
 
-//int main()
-//{
-//	CollisionTest* collision = new CollisionTest();
-//	UnitTest* unit = new UnitTest(collision);
-//	unit->run(); //TODO: Implement this to run every time
-//	collision->run(); //TODO: Show some simple AABB testing
-//	
-//}
+
