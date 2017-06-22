@@ -20,7 +20,8 @@ bool GSMApp::startup() {
 	
 	m_2dRenderer = new aie::Renderer2D();
 	m_font = new aie::Font("./font/consolas.ttf", 32);
-
+	
+	m_splash = new aie::Texture("./textures/fhammer.png");
 	m_skelly = new aie::Texture("./textures/skelly.png");
 
 	m_gameStateManager = new GameStateManager();

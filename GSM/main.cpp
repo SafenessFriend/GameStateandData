@@ -8,7 +8,7 @@
 
 #include "GSMApp.h"
 #include "UnitTest.h"
-
+#include <iostream>
 
 int main() {
 	
@@ -18,5 +18,3 @@ int main() {
 
 	return 0;
 }
-
-

@@ -4,11 +4,11 @@
 
 class IPrototype;
 
-class SnackFactory
+class Factory
 {
 public:
-	SnackFactory();
-	~SnackFactory();
+	Factory();
+	~Factory();
 
 	void addPrototype(std::shared_ptr<IPrototype> prototype);
 

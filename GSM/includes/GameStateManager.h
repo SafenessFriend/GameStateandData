@@ -1,7 +1,8 @@
 #pragma once
 #include <map>
 #include <vector>
-#include "DynArr.h"
+//#include "DynArr.h"
+//#include "Map.h"
 
 class IGameState;
 
@@ -27,7 +28,10 @@ protected:
 	void DoPopState();
 
 	std::map< const char *, IGameState *> m_availableStates;
+	//Map<int, IGameState*> m_availableStates;
+
 	std::vector<IGameState *> m_states;
+	//DynArr<IGameState*> m_states;
 
 	enum class ECommands
 	{
@@ -44,6 +48,7 @@ protected:
 	};
 
 	std::vector<Commands> m_commands;
+	//DynArr<Commands> m_commands;
 
 private:
 

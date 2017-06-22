@@ -2,7 +2,6 @@
 
 #include "Application.h"
 #include "Renderer2D.h"
-#include "DynamicArray.h"
 
 //predeclare types
 class GameStateManager;
@@ -21,6 +20,8 @@ public:
 
 	aie::Renderer2D* GetRenderer();
 	GameStateManager *GetGameStateManager();
+	aie::Texture*		m_splash;
+
 
 protected:
 
@@ -31,4 +32,5 @@ protected:
 	aie::Font*			m_font;
 
 	aie::Texture*		m_skelly;
+
 };
