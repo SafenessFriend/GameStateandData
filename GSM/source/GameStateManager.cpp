@@ -76,7 +76,8 @@ void GameStateManager::DoPushState(const char * name)
 	if (iter != m_availableStates.end())
 	{
 		m_states.push_back(iter->second);
-		//TODO: assert if m_states alread had the states in the collection
+		m_states.back()->startup();
+			//TODO: assert if m_states alread had the states in the collection
 	}
 	else
 	{
@@ -91,6 +92,7 @@ void GameStateManager::DoPopState()
 		//TODO: assert, trying to pop off a state when there are no states active
 		return;
 	}
+	
 	m_states.pop_back();
 }
 

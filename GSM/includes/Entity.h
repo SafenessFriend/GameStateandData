@@ -1,7 +1,7 @@
 #pragma once
 #include "IPrototype.h"
 #include "ResourceManager.h"
-#include <glm\vec2.hpp>
+#include "Vector2.h"
 
 namespace aie {
 	class Texture;
@@ -22,7 +22,7 @@ public:
 	virtual std::string getName() { return m_name; }
 
 	bool isAlive() { return m_bAlive; }
-	glm::vec2 getPosition() { return m_position; }
+	Vector2 getPosition() { return m_position; }
 
 	void setAlive(bool state) { m_bAlive = state; }
 	void setVelocity(float x, float y);
@@ -33,8 +33,8 @@ public:
 
 private:
 	std::shared_ptr<ResourceBase> m_texture;
-	glm::vec2 m_position;
-	glm::vec2 m_velocity;
+	Vector2 m_position;
+	Vector2 m_velocity;
 	bool m_bAlive;
 	std::string m_name;
 };

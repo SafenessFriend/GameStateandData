@@ -5,12 +5,12 @@
 #include <iostream>
 
 Entity::Entity(const std::string name, std::shared_ptr<ResourceBase> texture) :
-	m_name(name), m_texture(texture), m_position(glm::vec2(0, 0)), m_velocity(glm::vec2(0, 0))
+	m_name(name), m_texture(texture), m_position(Vector2(0, 0)), m_velocity(Vector2(0, 0))
 {
 }
 
 Entity::Entity(const std::string name, const char* filename) :
-	m_name(name), m_position(glm::vec2(0, 0)), m_velocity(glm::vec2(0, 0))
+	m_name(name), m_position(Vector2(0, 0)), m_velocity(Vector2(0, 0))
 {
 	m_texture = ResourceManager::getInstance().get(filename, ResourceManager::TEXTURE);
 }

@@ -30,7 +30,7 @@ bool GSMApp::startup() {
 	m_gameStateManager->SetState("PAUSE", new PausedState(this));
 	m_gameStateManager->SetState("PLAY", new PlayState(this));
 
-	m_gameStateManager->PushState("SPLASH");
+	m_gameStateManager->PushState("PLAY");
 
 
 	return true;

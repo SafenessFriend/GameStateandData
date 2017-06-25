@@ -97,7 +97,6 @@
     <ClCompile Include="source\Entity.cpp" />
     <ClCompile Include="source\GameStateManager.cpp" />
     <ClCompile Include="source\GSMApp.cpp" />
-    <ClCompile Include="source\IGameState.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="source\MenuState.cpp" />
     <ClCompile Include="source\PausedState.cpp" />

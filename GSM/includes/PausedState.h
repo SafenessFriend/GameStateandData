@@ -14,6 +14,8 @@ public:
 	PausedState(GSMApp *pApp);
 	virtual ~PausedState();
 
+	virtual bool startup();
+	virtual void shutDown();
 	virtual void Update(float deltaTime);
 	virtual void Draw();
 

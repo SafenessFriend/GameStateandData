@@ -18,6 +18,16 @@ PausedState::~PausedState()
 	//destructor - unload assets here
 }
 
+bool PausedState::startup()
+{
+	return false;
+}
+
+void PausedState::shutDown()
+{
+
+}
+
 void PausedState::Update(float deltaTime)
 {
 	aie::Input* input = aie::Input::getInstance();

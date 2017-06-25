@@ -6,11 +6,13 @@ class IGameState
 {
 public:
 
-	IGameState(GSMApp *pApp);
-	virtual ~IGameState();
+	IGameState(GSMApp *pApp) : m_app(pApp) {}
+	virtual ~IGameState() = default;
 
-	virtual void Update(float deltaTime);
-	virtual void Draw();
+	virtual bool startup() = 0;
+	virtual void shutDown() = 0;
+	virtual void Update(float deltaTime) = 0;
+	virtual void Draw() = 0;
 
 protected:
 

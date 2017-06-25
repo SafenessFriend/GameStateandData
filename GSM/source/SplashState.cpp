@@ -19,6 +19,15 @@ SplashState::~SplashState()
 	delete m_title;
 }
 
+bool SplashState::startup()
+{
+	return false;
+}
+
+void SplashState::shutDown()
+{
+}
+
 void SplashState::Update(float deltaTime)
 {
 	m_splashTimer -= deltaTime;

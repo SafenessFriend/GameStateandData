@@ -14,6 +14,16 @@ MenuState::~MenuState()
 	//destructor - unload assets here
 }
 
+bool MenuState::startup()
+{
+	return false;
+}
+
+void MenuState::shutDown()
+{
+
+}
+
 void MenuState::Update(float deltaTime)
 {
 	aie::Input* input = aie::Input::getInstance();
