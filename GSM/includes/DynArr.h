@@ -16,24 +16,24 @@ public:
 	}
 
 	void push_back(T item) {
-		// check if the container has room for new items, if it doesn't, add new capacity
+		// check for room, if full create more space
 		if (m_size == m_capacity)
 			reserve();
 
-		// append the item to the end of the list
+		// append the item to the end
 		m_data[m_size++] = item;
 	}
 
 	void insert(unsigned int _index, T item) {
-		// check if the container has room for new items, if it doesn't, add new capacity
+		// check if the container has room, if no room insert at specific point
 		if (m_size == m_capacity)
 			reserve();
 
-		// Shift existing items to the right, to make room for the new item at the specified index
+		// Shift to the right
 		for (unsigned int i = m_size; i >= _index; i--)
 			m_data[i + 1] = m_data[i];
 
-		// Add the item to the specified location
+		// Add the item to specific location
 		m_data[_index] = item;
 		m_size++;
 	}
@@ -46,24 +46,24 @@ public:
 	}
 
 	void pop_back() {
-		// Decrease size, and set the last element's data to a "null" initialized value
+		// Decrease size
 		m_data[m_size--] = T();
 	}
 
 	void remove(unsigned int _index) {
-		// Shift existing items to the left, to replace the item we want to remove
+		// Shift to the left and replace
 		for (unsigned int i = _index + 1; i < m_size; i++)
 			m_data[i - 1] = m_data[i];
 
-		// Decrease the size
+		// Decrease size
 		m_size--;
 	}
 
 	void clear() {
-		// If there is nothing in the container, do nothing
+		// If nothing do nothing
 		if (empty()) return;
 
-		// For every element that exists in the container, remove it
+		// remove elements
 		for (unsigned int i = m_size; i > 0; i--)
 			remove(i - 1);
 	}

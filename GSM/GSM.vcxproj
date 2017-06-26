@@ -92,7 +92,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="includes\ErrorManager.hpp" />
     <ClCompile Include="source\ResourceManager.cpp" />
     <ClCompile Include="source\Factory.cpp" />
     <ClCompile Include="source\Entity.cpp" />
@@ -102,18 +101,14 @@
     <ClCompile Include="source\MenuState.cpp" />
     <ClCompile Include="source\PausedState.cpp" />
     <ClCompile Include="source\PlayState.cpp" />
-    <ClCompile Include="source\CollisionTest.cpp" />
     <ClCompile Include="source\SplashState.cpp" />
-    <ClCompile Include="source\UnitTest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="includes\Factory.h" />
     <ClInclude Include="includes\DynArr.h" />
     <ClInclude Include="includes\Entity.h" />
     <ClInclude Include="includes\GameStateManager.h" />
-    <ClInclude Include="includes\Geometry.h" />
     <ClInclude Include="includes\GSMApp.h" />
-    <ClInclude Include="includes\CollisionTest.h" />
     <ClInclude Include="includes\IPrototype.h" />
     <ClInclude Include="includes\Map.h" />
     <ClInclude Include="includes\Matrix2.h" />
@@ -129,7 +124,6 @@
     <ClInclude Include="includes\PausedState.h" />
     <ClInclude Include="includes\PlayState.h" />
     <ClInclude Include="includes\SplashState.h" />
-    <ClInclude Include="includes\UnitTest.h" />
     <ClInclude Include="includes\ResourceManager.h" />
   </ItemGroup>
   <ItemGroup>

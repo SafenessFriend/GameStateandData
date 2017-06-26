@@ -1,3 +1,10 @@
+///////////////////////////////////////////////////////////////////
+////	Description:	Aquarium, a game state manager, custom data structure and design pattern program.
+////	Created By:		by Jack Booker
+////
+////	
+
+
 #include "GSMApp.h"
 #include "Texture.h"
 #include "Font.h"
