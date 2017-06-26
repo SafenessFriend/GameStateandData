@@ -3,15 +3,21 @@
 #include "GameStateManager.h"
 #include <iostream>
 #include <Input.h>
+#include <Texture.h>
+#include <Font.h>
 
 MenuState::MenuState(GSMApp *pApp) : IGameState(pApp)
 {
-	// Constructor - load assets here
+
+	m_title = new aie::Texture("./textures/title.png");
+	m_font = new aie::Font("./font/consolas.ttf", 32);
 }
 
 MenuState::~MenuState()
 {
-	//destructor - unload assets here
+	delete m_title;
+	delete m_font;
+
 }
 
 bool MenuState::startup()
@@ -45,6 +51,7 @@ void MenuState::Draw()
 	std::cout << "Menu - Draw" << std::endl;
 
 	m_app->GetRenderer()->begin();
-	m_app->GetRenderer()->drawCircle(300, 300, 300, 0);
+	m_app->GetRenderer()->drawSprite(m_title, 640, 360);
+	m_app->GetRenderer()->drawText(m_font, "Press SPACE to begin", 440, 100, 0);
 	m_app->GetRenderer()->end();
 }

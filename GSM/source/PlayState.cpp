@@ -9,14 +9,17 @@
 #include <time.h>
 #include <memory>
 #include "Entity.h"
+#include <Texture.h>
 
 PlayState::PlayState(GSMApp *pApp) : IGameState(pApp)
 {
+	m_background = new aie::Texture("./textures/underwater.png");
 	// Constructor - load assets here
 }
 
 PlayState::~PlayState()
 {
+	delete m_background;
 	//destructor - unload assets here
 }
 
@@ -25,20 +28,28 @@ bool PlayState::startup() {
 	m_2dRenderer = new aie::Renderer2D();
 	
 	
-	srand(time(NULL));
+	time_t srand(time(NULL));
 	
 	m_factory = std::unique_ptr<Factory>(new Factory());
 	
 		// create some entities to store in the factory
-	std::shared_ptr<Entity> car(new Entity("car", "./textures/car.png"));
-	car->setPosition(200, 100);
+	std::shared_ptr<Entity> fish(new Entity("fish", "./textures/fish.png"));
+	fish->setPosition(float(rand() % 1280), float(rand () % 720));
+
+	std::shared_ptr<Entity> fish2(new Entity("fish2", "./textures/fish2.png"));
+	fish2->setPosition(float(rand() % 1280), float(rand() % 720));
 	
-	std::shared_ptr<Entity> bullet(new Entity("bullet", "./textures/bullet.png"));
-	bullet->setPosition(500, 400);
+	std::shared_ptr<Entity> jelly(new Entity("jelly", "./textures/jelly.png"));
+	jelly->setPosition(float(rand() % 1280), float(rand() % 720));
+
+	std::shared_ptr<Entity> starfish(new Entity("starfish", "./textures/starfish.png"));
+	starfish->setPosition(float(rand() % 1280), float(rand () % 720));
 	
-	m_factory->addPrototype(car);
-	m_factory->addPrototype(bullet);
-	
+	m_factory->addPrototype(fish);
+	m_factory->addPrototype(fish2);
+	m_factory->addPrototype(jelly);
+	m_factory->addPrototype(starfish);
+
 	return true;
 	
 }
@@ -54,7 +65,6 @@ void PlayState::Update(float deltaTime)
 	// do update logic here
 	std::cout << "Play - Update" << std::endl;
 
-	m_factory = std::unique_ptr<Factory>(new Factory());
 
 			static float timer = 0;
 		
@@ -62,14 +72,18 @@ void PlayState::Update(float deltaTime)
 			timer = 0.5f;
 			
 				std::shared_ptr<IPrototype> entityClone;
-			if (rand() % 2 == 0)
-				 entityClone = m_factory->create("car");
-			else
-				 entityClone = m_factory->create("bullet");
+			if (rand() % 4 == 0)
+				 entityClone = m_factory->create("fish");
+			else if (rand() % 3 == 0)
+				 entityClone = m_factory->create("jelly");
+			else if (rand() % 2 == 0)
+				entityClone = m_factory->create("fish2");
+			else if (rand() % 1 == 0)
+				entityClone = m_factory->create("starfish");
 			
 			// dynamically cast the shared pointer from IPrototype to entity
 			std::shared_ptr<Entity> entity = std::dynamic_pointer_cast<Entity>(entityClone);
-			entity->setVelocity(50 - rand() % 100, 50 - rand() % 100);
+			entity->setVelocity(float(50 - rand() % 100), float(50 - rand() % 100));
 			m_entities.push_back(entity);
 			
 		}
@@ -94,23 +108,21 @@ void PlayState::Update(float deltaTime)
 
 void PlayState::Draw()
 {
-	// do draw logic here
+
 	std::cout << "Play - Draw" << std::endl;
 
-		// wipe the screen to the background colour
-				//clearScreen();
+	m_2dRenderer->begin();
 			
-					// begin drawing sprites
-				m_2dRenderer->begin();
-			
-					// draw your stuff here!
-				for (std::shared_ptr<Entity> entity : m_entities) {
-				entity->draw(m_2dRenderer);
+	m_2dRenderer->drawSprite(m_background, 640, 360);
+
+
+	for (std::shared_ptr<Entity> entity : m_entities) {
+	entity->draw(m_2dRenderer);
 				
-			}
+		}
 	
 			
-					// done drawing sprites
-				m_2dRenderer->end();
+				
+	m_2dRenderer->end();
 			
 }

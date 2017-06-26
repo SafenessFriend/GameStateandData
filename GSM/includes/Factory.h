@@ -1,6 +1,6 @@
 #pragma once
-#include <vector>
 #include <memory>
+#include "DynArr.h"
 
 class IPrototype;
 
@@ -15,6 +15,6 @@ public:
 	std::shared_ptr<IPrototype> create(const char* name);
 
 private:
-	std::vector<std::shared_ptr<IPrototype>> m_prototypes;
+	DynArr<std::shared_ptr<IPrototype>> m_prototypes;
 };
 

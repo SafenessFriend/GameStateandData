@@ -18,9 +18,9 @@ public:
 
 protected:
 
-	float m_splashTimer = 10.0f;
+	float m_splashTimer = 4.0f;
 	aie::Texture*		m_splash;
-	aie::Texture*		m_title;
+
 
 private:
 

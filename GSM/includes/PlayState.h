@@ -30,6 +30,7 @@ public:
 protected:
 
 	aie::Renderer2D*	m_2dRenderer;
+	aie::Texture*		m_background;
 	std::unique_ptr<Factory> m_factory;
 	std::list<std::shared_ptr<Entity>> m_entities;
 

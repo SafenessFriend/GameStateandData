@@ -92,6 +92,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="includes\ErrorManager.hpp" />
     <ClCompile Include="source\ResourceManager.cpp" />
     <ClCompile Include="source\Factory.cpp" />
     <ClCompile Include="source\Entity.cpp" />

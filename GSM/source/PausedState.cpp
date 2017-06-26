@@ -31,14 +31,9 @@ void PausedState::shutDown()
 void PausedState::Update(float deltaTime)
 {
 	aie::Input* input = aie::Input::getInstance();
-	// do update logic here
+
 	std::cout << "Paused - Update" << std::endl;
 
-	//if (input->wasKeyPressed(aie::INPUT_KEY_P))
-	//{
-	//	m_app->GetGameStateManager()->PopState();
-	//	m_app->GetGameStateManager()->PushState("PLAY");
-	//}
 
 
 }
@@ -49,6 +44,6 @@ void PausedState::Draw()
 	std::cout << "Paused - Draw" << std::endl;
 
 	m_app->GetRenderer()->begin();
-	m_app->GetRenderer()->drawText(m_font, "paused", 500, 500, 0);
+	m_app->GetRenderer()->drawText(m_font, "paused", 640, 360, 0);
 	m_app->GetRenderer()->end();
 }

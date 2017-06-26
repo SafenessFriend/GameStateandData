@@ -1,6 +1,12 @@
 #pragma once
 #include "IGameState.h"
 
+namespace aie
+{
+	class Font;
+	class Texture;
+}
+
 class MenuState : public IGameState
 {
 public:
@@ -13,6 +19,9 @@ public:
 	virtual void Draw();
 
 protected:
+
+	aie::Texture*		m_title;
+	aie::Font *m_font;
 
 private:
 

@@ -1,10 +1,8 @@
 ///////////////////////////////////////////////////////////////////
-////	Description:	A program that does things?
-////	Created By:		Someone
+////	Description:	Fishing, a game state manager, custom data structure and design pattern program.
+////	Created By:		 by Jack Booker
 ////
-
-
-// Game State Manager by Jack Booker
+////
 
 #include "GSMApp.h"
 #include "UnitTest.h"
